@@ -292,7 +292,7 @@ async function captureClipboard(){
   const blob = await new Promise(res=>canvas.toBlob(res,'image/png'));
   try{
     await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
-    alert('이미지 캡쳐 완료! 모바일의 경우 이미지 다운로드를 선택해 주세요!');
+    alert('이미지 캡쳐 완료! [모바일은 캡쳐 불가] 이미지 다운로드를 선택해 주세요!');
   }catch(e){
     console.warn('Clipboard write failed:', e);
     if(confirm('클립보드 저장이 불가능합니다. 다운로드 하시겠습니까?')){
